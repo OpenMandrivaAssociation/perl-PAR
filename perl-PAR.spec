@@ -1,6 +1,6 @@
 %define	module	PAR
 %define	name	perl-%{module}
-%define	version	0.959
+%define	version	0.976
 %define	release	%mkrel 1
 
 Summary:	Perl Archive Toolkit
@@ -10,9 +10,7 @@ Release:	%{release}
 License:	Artistic
 Group:		Development/Perl
 URL:		http://par.perl.org/
-Source0:	%{module}-%{version}.tar.bz2
-Patch0:		perl-PAR-fix-interp.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	http://www.cpan.org/modules/by-module/PAR/%{module}-%{version}.tar.gz
 BuildRequires:	perl(Archive::Zip) >= 1
 BuildRequires:	perl(Compress::Zlib)
 BuildRequires:	perl(File::Temp)
@@ -27,6 +25,7 @@ BuildRequires:	perl(File::Temp)
 BuildRequires:	perl(Module::ScanDeps) >= 0.45
 BuildRequires:	perl(PAR::Dist) >= 0.13
 BuildRequires:  perl(Getopt::ArgvFile)
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 PAR is a toolkit to use perl scripts and modules stored inside compressed
@@ -39,7 +38,6 @@ To generate/execute self-contained perl scripts, see "perldoc par.pl".
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p0
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
