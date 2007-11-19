@@ -11,6 +11,7 @@ License:	Artistic
 Group:		Development/Perl
 URL:		http://par.perl.org/
 Source0:	http://www.cpan.org/modules/by-module/PAR/%{module}-%{version}.tar.gz
+BuildRequires:  perl(AutoLoader) >= 5.63
 BuildRequires:	perl(Archive::Zip) >= 1
 BuildRequires:	perl(Compress::Zlib)
 BuildRequires:	perl(File::Temp)
@@ -46,20 +47,21 @@ To generate/execute self-contained perl scripts, see "perldoc par.pl".
 %check
 # don't run signature test since this package was patched
 rm -f SIGNATURE
-yes | (%__make test)
+export PERL5LIB=%perl_vendorlib
+%__make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %{makeinstall_std}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog contrib/ README TODO
-%{_bindir}/*
-%{perl_vendorlib}/*
+%doc AUTHORS ChangeLog README TODO
+%{perl_vendorlib}/PAR
+%{perl_vendorlib}/PAR.pm
 %{_mandir}/*/*
 
 
