@@ -47,7 +47,6 @@ To generate/execute self-contained perl scripts, see "perldoc par.pl".
 %check
 # don't run signature test since this package was patched
 rm -f SIGNATURE
-export PERL5LIB=%perl_vendorlib
 %__make test
 
 %install
