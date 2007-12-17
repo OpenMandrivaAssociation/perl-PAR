@@ -26,7 +26,6 @@ BuildRequires:	perl(File::Temp)
 BuildRequires:	perl(Module::ScanDeps) >= 0.45
 BuildRequires:	perl(PAR::Dist) >= 0.13
 BuildRequires:  perl(Getopt::ArgvFile)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 PAR is a toolkit to use perl scripts and modules stored inside compressed
