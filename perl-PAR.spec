@@ -1,7 +1,7 @@
 %define	module	PAR
 %define	name	perl-%{module}
 %define	version	0.992
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Summary:	Perl Archive Toolkit
 Version:	%{version}
