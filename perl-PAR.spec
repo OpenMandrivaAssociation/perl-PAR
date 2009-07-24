@@ -1,16 +1,16 @@
-%define	module	PAR
-%define	name	perl-%{module}
-%define	version	0.992
-%define	release	%mkrel 2
+%define	upstream_name	 PAR
+%define	upstream_version 0.994
+
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
 
 Summary:	Perl Archive Toolkit
-Version:	%{version}
-Name:		%{name}
-Release:	%{release}
 License:	Artistic
 Group:		Development/Perl
 URL:		http://par.perl.org/
-Source0:	http://www.cpan.org/modules/by-module/PAR/%{module}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/PAR/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  perl(AutoLoader) >= 5.63
 BuildRequires:	perl(Archive::Zip) >= 1
 BuildRequires:	perl(Compress::Zlib)
@@ -38,7 +38,7 @@ For running ".par" files directly, see "perldoc parl".
 To generate/execute self-contained perl scripts, see "perldoc par.pl".
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
@@ -62,6 +62,4 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/PAR
 %{perl_vendorlib}/PAR.pm
 %{_mandir}/*/*
-
-
 
