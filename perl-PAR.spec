@@ -1,5 +1,5 @@
 %define	upstream_name	 PAR
-%define	upstream_version 0.994
+%define upstream_version 1.000
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -26,7 +26,8 @@ BuildRequires:	perl(File::Temp)
 BuildRequires:	perl(Module::ScanDeps) >= 0.45
 BuildRequires:	perl(PAR::Dist) >= 0.13
 BuildRequires:  perl(Getopt::ArgvFile)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 PAR is a toolkit to use perl scripts and modules stored inside compressed
@@ -42,12 +43,12 @@ To generate/execute self-contained perl scripts, see "perldoc par.pl".
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
-%__make
+%make
 
 %check
 # don't run signature test since this package was patched
 rm -f SIGNATURE
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -62,4 +63,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/PAR
 %{perl_vendorlib}/PAR.pm
 %{_mandir}/*/*
-
