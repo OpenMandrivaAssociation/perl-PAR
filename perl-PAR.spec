@@ -2,14 +2,14 @@
 %define upstream_version 1.007
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.007
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Perl Archive Toolkit
 License:	Artistic
 Group:		Development/Perl
 URL:		http://par.perl.org/
-Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-1.007.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(AutoLoader) >= 5.63
 BuildRequires:	perl(Archive::Zip) >= 1
