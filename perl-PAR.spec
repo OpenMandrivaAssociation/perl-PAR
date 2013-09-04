@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 %define	upstream_name	 PAR
 %define upstream_version 1.007
 
