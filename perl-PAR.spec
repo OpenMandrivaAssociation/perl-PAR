@@ -1,15 +1,16 @@
+%define debug_package %{nil}
 %define	upstream_name	 PAR
-%define upstream_version 1.005
+%define upstream_version 1.007
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 1
+Release:	1
 
 Summary:	Perl Archive Toolkit
 License:	Artistic
 Group:		Development/Perl
 URL:		http://par.perl.org/
-Source0:	http://www.cpan.org/modules/by-module/PAR/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(AutoLoader) >= 5.63
 BuildRequires:	perl(Archive::Zip) >= 1
@@ -193,4 +194,5 @@ rm -rf %{buildroot}
 
 * Sat May 22 2004 Florin <florin@mandrakesoft.com> 0.80-1mdk
 - first Mandrake release
+
 
