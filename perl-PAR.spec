@@ -9,7 +9,7 @@ Release:	3
 Summary:	Perl Archive Toolkit
 License:	Artistic
 Group:		Development/Perl
-URL:		http://par.perl.org/
+URL:		https://par.perl.org/
 Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(AutoLoader) >= 5.63
