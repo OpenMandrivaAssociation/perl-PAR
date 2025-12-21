@@ -12,6 +12,7 @@ Group:		Development/Perl
 URL:		https://par.perl.org/
 Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{upstream_version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:  perl(AutoLoader) >= 5.63
 BuildRequires:	perl(Archive::Zip) >= 1
 BuildRequires:	perl(Compress::Zlib)
