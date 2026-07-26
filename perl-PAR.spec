@@ -1,16 +1,14 @@
 %define debug_package %{nil}
 %define	upstream_name	 PAR
-%define upstream_version 1.007
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	1.007
+Release:	4
 
 Summary:	Perl Archive Toolkit
 License:	Artistic
 Group:		Development/Perl
 URL:		https://par.perl.org/
-Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/PAR/PAR-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:  perl(AutoLoader) >= 5.63
@@ -41,7 +39,7 @@ For running ".par" files directly, see "perldoc parl".
 To generate/execute self-contained perl scripts, see "perldoc par.pl".
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
@@ -83,9 +81,7 @@ rm -rf %{buildroot}
 * Fri Jul 24 2009 Jérôme Quelin <jquelin@mandriva.org> 0.994.0-1mdv2010.0
 + Revision: 399265
 - update to 0.994
-- using %%perl_convert_version
-
-* Thu May 07 2009 Jérôme Quelin <jquelin@mandriva.org> 0.992-2mdv2010.0
+- using %1.007 Thu May 07 2009 Jérôme Quelin <jquelin@mandriva.org> 0.992-2mdv2010.0
 + Revision: 372849
 - force rebuild, now that io-compress madness is gone
 - update to new version 0.992
